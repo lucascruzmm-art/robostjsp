@@ -1,0 +1,35 @@
+{
+  "planilha": {
+    "aba": null,
+    "linha_cabecalho": 1,
+    "coluna_processo": "A",
+    "coluna_resultado": null,
+    "titulo_resultado": "Resultado AR"
+  },
+  "saj": {
+    "backend": "auto",
+    "window_title": "^Visualização de Autos$",
+    "tree": {},
+    "process_fields": [],
+    "submit_control": null,
+    "capture_region": [0.19, 0.35, 0.99, 0.94],
+    "caption_region": [0.198, 0.29, 0.80, 0.351],
+    "document_region": [0.19, 0.264, 0.982, 0.94],
+    "caption_control": null,
+    "fit_page_control": null,
+    "document_text_control": null,
+    "require_category": true,
+    "confirm_timeout_seconds": 12,
+    "settle_seconds": 0.7
+  },
+  "leitura": {
+    "executavel_tesseract": "tesseract",
+    "idioma": "por",
+    "tempo_ocr": 20,
+    "confianca_ocr": 65,
+    "regiao": null,
+    "auto_recortar": true,
+    "modelo_digital": true,
+    "molde_branco": null
+  }
+}

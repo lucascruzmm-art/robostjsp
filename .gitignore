@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+config.local.json
+*.xlsx
+*.xlsm
+*.csv
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.robo-ar.lock
