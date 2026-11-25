@@ -1,5 +1,7 @@
 # Robô de conferência de citação no SAJ
 
+Para instalar no Windows, abra o [arquivo robo_ar.zip](downloads/robo_ar.zip) e selecione **Download raw file** no GitHub.
+
 O robô percorre a árvore de documentos da janela **Visualização de Autos**. Lê cada AR e procura registros de citação em mandados, certidões e editais. Na planilha de entrada, grava um resumo por processo e as ocorrências com as páginas correspondentes.
 
 ## Instalação no Windows
