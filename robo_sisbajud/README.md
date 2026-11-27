@@ -4,13 +4,15 @@ Automação auxiliar para o SAJ de Primeiro Grau no Windows. Lê uma planilha Ex
 
 ## Baixar e usar
 
-Baixe a distribuição pronta na [Release Sisbajud v1.0.0 portátil](https://github.com/lucascruzmm-art/robo_resultadoAR/releases/tag/sisbajud-v1.0.0-portatil). O código deste projeto fica na subpasta `robo_sisbajud/`; o robô de conferência de AR permanece independente.
+Baixe a distribuição pronta na [Release Sisbajud v1.0.0 portátil](https://github.com/lucascruzmm-art/robostjsp/releases/tag/sisbajud-v1.0.0-portatil). O código deste projeto fica na subpasta `robo_sisbajud/`; o robô de conferência de AR permanece independente.
 
 1. Baixe `Robo_Sisbajud_Portatil_Windows_x64.zip` na Release.
 2. Extraia **o ZIP inteiro** para uma pasta local gravável.
 3. Abra `Robo_Sisbajud_Portatil` e dê dois cliques em `Iniciar.bat`.
 4. Selecione a planilha `.xlsx` e a pasta dos PDFs. Confira as linhas antes de iniciar.
 5. Deixe o SAJ aberto na tela inicial e mantenha a opção correspondente marcada.
+
+**A revisão 5 altera o código. O ZIP preparado anteriormente é da revisão 4 e ainda contém a etapa antiga após Alt+L; para usar esta correção nele, substitua o arquivo `saj_previa.py` pelo código atual. O envio do ZIP como asset continua bloqueado por autenticação da conexão.**
 
 O ZIP contém CPython 3.12.14 Windows x64, Tcl/Tk, bibliotecas e as 25 imagens de calibração recebidas. Não é necessário instalar Python, executar pip ou baixar componentes na primeira abertura. Mova sempre a pasta inteira. Não execute de dentro do ZIP.
 
@@ -30,9 +32,9 @@ O histórico é criado localmente em `historico_saj.csv`; tentativas anteriores 
 
 ## Fluxo atual
 
-A fonte atual é a **versão 1, revisão 4**. Preserva o fluxo já construído: abrir o digitalizador, carregar processo, fechar pendências quando houver, importar o PDF, tratar o sigilo da Decisão, salvar/liberar e limpar para o próximo processo.
+A fonte atual é a **versão 1, revisão 5**. Preserva o fluxo já construído: abrir o digitalizador, carregar processo, fechar pendências quando houver, importar o PDF, tratar o sigilo da Decisão, salvar/liberar e limpar para o próximo processo.
 
-Depois de `Alt+L`, a espera inicial é de 6 segundos e o prazo total para disponibilizar Salvar é de 8 segundos. O vencimento é registrado e o lote tenta a recuperação por Limpar. A prioridade de Parar é preservada, inclusive quando o prazo vence durante a busca. Consulte [VERSAO_ATUAL.json](VERSAO_ATUAL.json) e os snapshots em [versoes/](versoes/).
+Depois de `Alt+L`, o robô aguarda 8 segundos pela gravação automática do SAJ e segue diretamente para Limpar. Não procura nem clica em Salvar após Alt+L. O salvamento da peça importada, anterior à liberação, permanece. Parar continua disponível durante a espera. Consulte [VERSAO_ATUAL.json](VERSAO_ATUAL.json) e os snapshots em [versoes/](versoes/).
 
 As imagens atuais estão em `imagens_saj/` e são preservadas byte a byte. Existem 18 referências obrigatórias. Mudanças na escala do Windows, resolução ou aparência do SAJ podem exigir nova captura em Calibrar imagens. As referências são recortes de controles da interface, sem PDFs ou planilhas.
 
@@ -84,9 +86,9 @@ A árvore informada deve corresponder ao runtime do [manifesto da distribuição
 - `Iniciar.bat` e `iniciar_portatil.py`: abertura isolada usando o Python da distribuição.
 - `Verificar_portabilidade.bat` e `verificar_portabilidade.py`: diagnóstico local.
 - `requirements.txt`: versões fixadas das bibliotecas.
-- `versoes/`: cinco snapshots legítimos da versão 1 e revisões 1–4.
+- `versoes/`: seis snapshots legítimos da versão 1 e revisões 1–5.
 - `docs/distribuicao/`: manifestação, validação e SHA256 do ZIP publicado.
-- `tests/`: regressão do prazo após Alt+L.
+- `tests/`: regressão da gravação automática após Alt+L.
 
 Não foram incluídos no Git o runtime Python, o ZIP binário, dados de processos, PDFs, planilhas, histórico, prefixos Wine ou arquivos temporários de depuração.
 

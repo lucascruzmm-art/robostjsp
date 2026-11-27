@@ -1,0 +1,14 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "revisao": 5,
+  "data": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "0117a832858148df82128acb240097a67e9788208bb15892fc41b4ed09de8b90",
+  "alteracoes": [
+    "Após Alt+L, aguarda 8 segundos pela gravação automática do SAJ e segue diretamente para Limpar.",
+    "Retirada a busca e o clique em Salvar após Alt+L; mantido o salvamento anterior da peça importada.",
+    "Continuação do lote, recuperação por Limpar, Parar, exclusão de linhas e calibrações preservados."
+  ],
+  "verificacao": "Testes simulados aprovados: sequência Alt+L→8 segundos→Limpar, ausência de novo clique em Salvar, parada durante a espera, importação parcial e lote de dois processos; regressões de recuperação e 11 testes da interface aprovados. Não houve execução real desta alteração no SAJ."
+}

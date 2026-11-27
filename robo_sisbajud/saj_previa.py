@@ -17,7 +17,7 @@ IMAGENS = BASE / 'imagens_saj'
 HISTORICO = BASE / 'historico_saj.csv'
 INTERVALO = 3
 ESPERA_SAJ = 6
-LIMITE_APOS_ALT_L = 8
+ESPERA_APOS_ALT_L = 8
 BG, PANEL, BLUE, TEXT, MUTED = '#e6e6e6', '#f3f3f3', '#005a9e', '#202020', '#606060'
 ALVOS = {
     'fluxo': 'Fluxo de Trabalho',
@@ -627,46 +627,25 @@ class Motor:
         janela.type_keys('{ESC}', set_foreground=False)
         self.aguardar()
 
-    def clicar_quando_disponivel(self, chave, pausa=INTERVALO, recuperar=False, limite=None):
+    def clicar_quando_disponivel(self, chave, pausa=INTERVALO, recuperar=False):
         referencia = carregar_referencia(chave)
-        aviso_prazo = False
-
-        def conferir_prazo():
-            self.verificar()
-            if limite is not None and time.monotonic() >= limite:
-                raise TimeoutError(
-                    f'{ALVOS[chave]} não ficou disponível em até '
-                    f'{LIMITE_APOS_ALT_L} segundos após Alt + L.'
-                )
-
         while True:
             self.verificar()
-            conferir_prazo()
             if recuperar:
                 self.cancelar_importacao_aberta()
-            tempo_busca = .6 if limite is None else min(.3, max(0, limite-time.monotonic()))
-            caixa = self.localizar(chave, tempo=tempo_busca, opcional=True)
-            conferir_prazo()
+            caixa = self.localizar(chave, tempo=.6, opcional=True)
             if caixa and self.saj_disponivel(caixa):
                 area = normalizar_regiao((caixa.left, caixa.top, caixa.width, caixa.height), self.pg.size())
                 captura = self.pg.screenshot(region=area)
                 if conferir_aparencia_botao(referencia, captura):
                     self.verificar()
-                    conferir_prazo()
                     self.evento('fase', self.fase)
                     self.pg.click(int(caixa.left+caixa.width//2), int(caixa.top+caixa.height//2))
                     self.aguardar(pausa)
                     return
-            conferir_prazo()
             self.evento('fase', 'Aguardando o SAJ: '+ALVOS[chave])
-            if limite is None:
-                self.log(ALVOS[chave]+' ainda indisponível. Nova tentativa em 6 segundos.')
-                self.aguardar(ESPERA_SAJ)
-            else:
-                if not aviso_prazo:
-                    self.log('Aguardando '+ALVOS[chave]+f', respeitando o limite total de {LIMITE_APOS_ALT_L} segundos após Alt + L.')
-                    aviso_prazo = True
-                self.aguardar(min(.2, max(0, limite-time.monotonic())))
+            self.log(ALVOS[chave]+' ainda indisponível. Nova tentativa em 6 segundos.')
+            self.aguardar(ESPERA_SAJ)
 
     def verificar_campo_limpo_visual(self, rotulo):
         largura, altura = (int(v) for v in self.pg.size())
@@ -1106,11 +1085,9 @@ class Motor:
         self.clicar('liberar', pausa=4, regiao=regiao)
         self.etapa('liberar com Alt + L')
         self.verificar()
-        limite_alt_l = time.monotonic() + LIMITE_APOS_ALT_L
         self.pg.hotkey('alt', 'l')
-        self.aguardar(min(ESPERA_SAJ, max(0, limite_alt_l-time.monotonic())))
-        self.etapa('salvar após liberação')
-        self.clicar_quando_disponivel('salvar', limite=limite_alt_l)
+        self.etapa('aguardar 8 segundos para o SAJ salvar automaticamente')
+        self.aguardar(ESPERA_APOS_ALT_L)
         self.limpar_para_proximo()
         return 'Fluxo de juntada e liberação executado'
 
