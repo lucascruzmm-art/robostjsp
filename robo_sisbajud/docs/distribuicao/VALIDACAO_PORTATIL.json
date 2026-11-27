@@ -1,0 +1,261 @@
+{
+  "data": "2026-11-27T15:24:59-03:00",
+  "arquivo": "Robo_Sisbajud_Portatil_Windows_x64.zip",
+  "bytes": 113366149,
+  "sha256": "711c56d42e376354385e88d837a2b5351eaaed17ef699e9fc58374e1bebe26a0",
+  "resultado_portabilidade_sob_wine": "aprovado",
+  "windows_nativo_testado": false,
+  "fluxo_saj_executado": false,
+  "ambiente": "Debian Linux x64, Wine 10.0 x64, Xvfb; executando CPython Windows real",
+  "pasta_extraida": "Validação Portátil/Robo_Sisbajud_Portatil",
+  "hashes_arquivos_originais_conferidos_antes_e_depois": 5050,
+  "imagens_preservadas": 25,
+  "referencias_obrigatorias_validadas": 18,
+  "pip_check": "No broken requirements found.",
+  "iniciar_bat": {
+    "janela_robo_encontrada": true,
+    "iniciador": "Iniciar.bat",
+    "diretorio_de_trabalho_diferente": true,
+    "python_do_sistema_no_path": false,
+    "variaveis_python_externas_invalidadas": true,
+    "acoes_saj": 0,
+    "exit_code": 0,
+    "ok": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "autoteste": {
+    "data": "2026-11-27T18:23:31",
+    "ok": true,
+    "escopo": "Autoteste local; sem cliques ou leitura de processos do SAJ; sem capturas persistidas.",
+    "testes": [
+      {
+        "nome": "Runtime isolado do ZIP",
+        "ok": true,
+        "detalhe": {
+          "python": "3.12.14",
+          "bits": 64,
+          "executavel": "python\\python.exe",
+          "prefixo": "python",
+          "sys_path": [
+            ".",
+            "python\\python312.zip",
+            "python\\DLLs",
+            "python\\Lib",
+            "python",
+            "python\\Lib\\site-packages",
+            "python\\Lib\\site-packages\\win32",
+            "python\\Lib\\site-packages\\win32\\lib",
+            "python\\Lib\\site-packages\\pythonwin",
+            "python\\Lib\\site-packages\\pywin32_system32"
+          ],
+          "isolado": true,
+          "python_no_path": null,
+          "py_no_path": null
+        }
+      },
+      {
+        "nome": "Bibliotecas com origem no ZIP",
+        "ok": true,
+        "detalhe": {
+          "tkinter": "python\\Lib\\tkinter\\__init__.py",
+          "_tkinter": "python\\DLLs\\_tkinter.pyd",
+          "PIL": "python\\Lib\\site-packages\\PIL\\__init__.py",
+          "PIL.Image": "python\\Lib\\site-packages\\PIL\\Image.py",
+          "PIL.ImageTk": "python\\Lib\\site-packages\\PIL\\ImageTk.py",
+          "numpy": "python\\Lib\\site-packages\\numpy\\__init__.py",
+          "cv2": "python\\Lib\\site-packages\\cv2\\__init__.py",
+          "openpyxl": "python\\Lib\\site-packages\\openpyxl\\__init__.py",
+          "et_xmlfile": "python\\Lib\\site-packages\\et_xmlfile\\__init__.py",
+          "six": "python\\Lib\\site-packages\\six.py",
+          "pyperclip": "python\\Lib\\site-packages\\pyperclip\\__init__.py",
+          "pyautogui": "python\\Lib\\site-packages\\pyautogui\\__init__.py",
+          "pyscreeze": "python\\Lib\\site-packages\\pyscreeze\\__init__.py",
+          "pytweening": "python\\Lib\\site-packages\\pytweening\\__init__.py",
+          "pygetwindow": "python\\Lib\\site-packages\\pygetwindow\\__init__.py",
+          "pyrect": "python\\Lib\\site-packages\\pyrect\\__init__.py",
+          "mouseinfo": "python\\Lib\\site-packages\\mouseinfo\\__init__.py",
+          "pymsgbox": "python\\Lib\\site-packages\\pymsgbox\\__init__.py",
+          "pywintypes": "python\\Lib\\site-packages\\pywin32_system32\\pywintypes312.dll",
+          "pythoncom": "python\\Lib\\site-packages\\pywin32_system32\\pythoncom312.dll",
+          "win32api": "python\\Lib\\site-packages\\win32\\win32api.pyd",
+          "win32gui": "python\\Lib\\site-packages\\win32\\win32gui.pyd",
+          "win32clipboard": "python\\Lib\\site-packages\\win32\\win32clipboard.pyd",
+          "comtypes": "python\\Lib\\site-packages\\comtypes\\__init__.py",
+          "comtypes.client": "python\\Lib\\site-packages\\comtypes\\client\\__init__.py",
+          "pywinauto": "python\\Lib\\site-packages\\pywinauto\\__init__.py"
+        }
+      },
+      {
+        "nome": "Pillow, NumPy e OpenCV",
+        "ok": true,
+        "detalhe": {
+          "opencv": "4.11.0",
+          "numpy": "2.2.6",
+          "pillow": "13.0.0"
+        }
+      },
+      {
+        "nome": "XLSX sintético",
+        "ok": true,
+        "detalhe": "Leitura e escrita de XLSX sintético; arquivo temporário removido."
+      },
+      {
+        "nome": "Win32, COM e Desktop",
+        "ok": true,
+        "detalhe": {
+          "win32": true,
+          "comtypes": true,
+          "pywinauto_desktop": true,
+          "janelas_enumeradas": 6,
+          "titulos_coletados": false
+        }
+      },
+      {
+        "nome": "Tk, ImageTk, screenshot e interface do robô",
+        "ok": true,
+        "detalhe": {
+          "tk": "8.6.15",
+          "image_tk": true,
+          "screenshot_em_memoria": true,
+          "screenshot_salvo": false,
+          "interface_app": true,
+          "acoes_saj": 0
+        }
+      },
+      {
+        "nome": "Referências de calibração",
+        "ok": true,
+        "detalhe": {
+          "total_referencias": 18,
+          "ausentes": [],
+          "invalidas": [],
+          "validador_app_executado": true,
+          "erros_app": [],
+          "arquivos_encontrados": {
+            "aguardando.png": {
+              "sha256": "979c3dffd2c7b2953bd535281cabfa15e405dd803dafb5501327cea08e614835",
+              "bytes": 810
+            },
+            "caixa_desmarcada.png": {
+              "sha256": "eeb090de1c666a60453d104b2c1f8ff3013acf001588df6cbe25ffa905c375fc",
+              "bytes": 312
+            },
+            "caixa_marcada.png": {
+              "sha256": "2df91776ae06145724d79519bc174a3420fa268c5dc53d928ec36e20c86a7385",
+              "bytes": 446
+            },
+            "codigo.png": {
+              "sha256": "8b2cdb3395c6fb43a373ae7dd30d40dce584403c9a9b190c4798b49eb94549f4",
+              "bytes": 538
+            },
+            "digitalizacao.png": {
+              "sha256": "aa409c0bbd2f6182ee710ee1c57462cade8ff93e2349e06f7485d7a06dccd47d",
+              "bytes": 1601
+            },
+            "fluxo.png": {
+              "sha256": "c8b2a9b09cd97d4cf874a8f342d875cbfdd5497b8a259744c996ef371eaa97d0",
+              "bytes": 1200
+            },
+            "importar.png": {
+              "sha256": "c61b7763dada2a9e5ecc22f0658844b73eb3b04fff0db438126bf0c177673869",
+              "bytes": 179
+            },
+            "liberar.png": {
+              "sha256": "1a479e88c06d191c6f66096cb84d958e4d7b3d711aa067d41624a9ee1239d5a4",
+              "bytes": 185
+            },
+            "limpar.png": {
+              "sha256": "5f67dd168e50e28e310d728c5e53ef06c54a03396399b86cd65647dea2e14539",
+              "bytes": 362
+            },
+            "pendencias.png": {
+              "sha256": "4cccea2db6b63ce6f5ab1bc47a394705216c958e794f13354a4e4e802720e769",
+              "bytes": 1207
+            },
+            "processo.png": {
+              "sha256": "2677b798aa7a661a3338658cd4b319206900b3831afcafd417c2308b7fc702e9",
+              "bytes": 687
+            },
+            "processo_rotulo.png": {
+              "sha256": "5bba37edc0032d2275212c81609fdbc9a65a3ee1fd256a9df368976af68da83f",
+              "bytes": 403
+            },
+            "salvar.png": {
+              "sha256": "9ea8a4fcd9339b802011438d80169b1ce325ba3b47a3a6e722e90f8e90707e66",
+              "bytes": 346
+            },
+            "sigilo_cadeado.png": {
+              "sha256": "725fde4108be2d1c50389d041146d47403e63bd34aaa7fabe759189fedec16c5",
+              "bytes": 189
+            },
+            "sigilo_decisao.png": {
+              "sha256": "05ac2fcbd7393dafb967f873d841a8724cffcf6e04bad66b406eae4ad8a0f9fd",
+              "bytes": 948
+            },
+            "sigilo_decisao_azul.png": {
+              "sha256": "c9aca77279ac2a253373731beb259053ea64c8b3c2ada3d2b6b176ff41901576",
+              "bytes": 574
+            },
+            "sigilo_decisao_selecionada.png": {
+              "sha256": "446ec168de13191521b51fc7a44c3d1deb26233c04566bcca1eec53fbd4851e1",
+              "bytes": 1158
+            },
+            "sigilo_decisao_texto.png": {
+              "sha256": "71efd5848f060a3628705b835f309e83413427eb69bd2b60847bd6a3f0585f61",
+              "bytes": 407
+            },
+            "sigilo_expandir.png": {
+              "sha256": "d34d0ec7b8c2f6548c8fac415ef91073ed30d7633be06feb7166dc762d11755d",
+              "bytes": 316
+            },
+            "sigilo_expandir_cadeado.png": {
+              "sha256": "3ee081a9efa2caa4e621e47db33853057e1ab6c1e372d382cbc17d7acb9b4dbc",
+              "bytes": 315
+            },
+            "sigilo_grupo.png": {
+              "sha256": "dda718b16aa32729e04521e198cb9fcca4d4fd410233716b99a4b0f709ae8572",
+              "bytes": 521
+            },
+            "sigilo_lista.png": {
+              "sha256": "c23f3b93845874b92a1c21c3f6a3f0c165993905234bfe157ba515ab5727c575",
+              "bytes": 678
+            },
+            "sigilo_mais.png": {
+              "sha256": "230e736bcc6cfe281f6781a7cfc27b8dc8c6db878989eb0c3b07776cc1d8065d",
+              "bytes": 312
+            },
+            "sigilo_remover.png": {
+              "sha256": "c043c47ca52d77132817f794a1463a4260463b723038e1bbea2978fca2dcb334",
+              "bytes": 615
+            },
+            "sigilo_seta.png": {
+              "sha256": "0f43e943aa10c8821470c31bdd9bdd563f1fdeaa348a0d1db764bbb2f29e2377",
+              "bytes": 165
+            }
+          },
+          "fonte_sha256": "57d2f5ded197c282662f4e14c18c0ea065023b78f3b15a027390a1e18ad8dfec",
+          "prontas": true,
+          "escopo": "Valida PNGs e regras de referências da fonte; não comprova reconhecimento no SAJ."
+        }
+      },
+      {
+        "nome": "Clipboard opcional",
+        "ok": true,
+        "detalhe": {
+          "testado": true,
+          "restaurado": true,
+          "conteudo_coletado": false
+        }
+      }
+    ],
+    "calibracoes_prontas": true,
+    "pronto_para_saj": true
+  },
+  "adaptacoes_exclusivas_wine": "UCRT e UIAutomationCore nativas Microsoft, sem alteração do pacote, da aplicação ou das bibliotecas.",
+  "limites": [
+    "Não houve teste em Windows nativo nem operação de processos no SAJ.",
+    "A versão exata de Python da máquina original não foi informada; o pacote usa CPython 3.12.14.",
+    "Teste adicional em caminho com %, & e ! falhou no CMD do Wine; o teste aprovado usa espaços e acentos. Esse caso adicional não foi verificado em Windows nativo."
+  ]
+}

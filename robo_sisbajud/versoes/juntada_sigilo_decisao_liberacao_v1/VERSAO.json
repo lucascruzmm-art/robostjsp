@@ -1,0 +1,9 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "data_registro": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "3723fafce65d6b2a02351ce2de2458c29e59324ff053c949724a54a44fed1b8c",
+  "registro": "Versão aprovada pelo usuário, preservada antes da correção para listas sem barra vertical.",
+  "imagens": "Referências calibradas permanecem na máquina do usuário; este registro arquiva o código."
+}

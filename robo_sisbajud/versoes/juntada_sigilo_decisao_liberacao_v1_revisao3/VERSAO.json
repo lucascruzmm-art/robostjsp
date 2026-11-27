@@ -1,0 +1,14 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "revisao": 3,
+  "data": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "3cb54dbbb850f636b1b55c0fa7f424cbd6b5f4e682e25a6b8c023d2c50ed5206",
+  "alteracoes": [
+    "Espera inicial de 6 segundos após Alt+L, com prazo total máximo de 8 segundos para disponibilizar Salvar.",
+    "Tempo excedido gera motivo detalhado em Resultado e recuperação por Limpar para continuar o lote.",
+    "Demais alterações da revisão 2 preservadas: continuação por processo, exclusão de linhas e simplificação da interface."
+  ],
+  "verificacao": "Sintaxe; testes simulados com relógio virtual de botão ativo em 6s/7,5s, expiração em 8s sem clique e rejeição de botão tardio; regressões de continuação do lote, limpeza, entrada do processo e 11 casos da interface aprovados. Validação real no SAJ depende do teste local."
+}

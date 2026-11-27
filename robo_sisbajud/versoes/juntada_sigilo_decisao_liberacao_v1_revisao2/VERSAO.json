@@ -1,0 +1,15 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "revisao": 2,
+  "data": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "17527cca6edb9c0f99bde3352063c5e9f107dd68cf0705b00dd62a536cd42b3b",
+  "alteracoes": [
+    "Após Alt+L, espera inicial de 6 segundos e novas esperas de 6 segundos para o SAJ disponibilizar a próxima ação.",
+    "Falhas registradas com etapa e motivo em Resultado; recuperação por Limpar antes de continuar o lote.",
+    "Confirmação visual da limpeza antes de preencher o próximo processo; Parar e emergência mantidos.",
+    "Exclusão manual de linhas por botão, Delete ou menu contextual; remoção de atalhos superiores e aviso de intervalos."
+  ],
+  "verificacao": "Sintaxe, testes simulados de espera/continuação/paradas, 11 casos de exclusão e 98 casos de leitura visual do campo aprovados, além dos testes de processo, sigilo e rolagem existentes. Validação real desta revisão no SAJ ainda depende do teste do usuário."
+}

@@ -1,0 +1,10 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "revisao": 1,
+  "data": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "2ccc116be749cb641b1789d99974411641ce078fe8caa6b2ee61af2cc74956f5",
+  "alteracao": "Listas identificadas independentemente da existência de barra vertical. Sem barra, segue sem exigir leitura de posição ou arraste, mantendo verificação de sigilo e liberação.",
+  "verificacao": "Sintaxe e testes simulados de listas com/sem barra, sigilo, seleção geral, preenchimento e lote aprovados; teste real desta revisão depende do SAJ do usuário."
+}

@@ -1,0 +1,162 @@
+{
+  "nome": "Robô Sisbajud portátil para Windows x64",
+  "automacao": {
+    "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+    "versao": "1",
+    "revisao": 4,
+    "data": "2026-11-27",
+    "arquivo": "saj_previa.py",
+    "sha256": "57d2f5ded197c282662f4e14c18c0ea065023b78f3b15a027390a1e18ad8dfec",
+    "alteracoes": [
+      "Espera inicial de 6 segundos após Alt+L, com prazo total máximo de 8 segundos para disponibilizar Salvar.",
+      "Tempo excedido gera motivo detalhado em Resultado e recuperação por Limpar para continuar o lote.",
+      "Demais alterações da revisão 2 preservadas: continuação por processo, exclusão de linhas e simplificação da interface.",
+      "Prioridade de Parar preservada quando a busca de Salvar termina simultaneamente ao vencimento dos 8 segundos."
+    ],
+    "verificacao": "9/9 testes simulados do prazo de 8 segundos, paradas e continuação do lote aprovados. As 18 referências recebidas foram validadas; 25 PNGs preservados. Empacotamento Windows x64 com teste de execução sob Wine em andamento; não houve execução real no SAJ."
+  },
+  "python": {
+    "versao": "3.12.14",
+    "arquitetura": "x86_64-pc-windows-msvc",
+    "distribuicao": "python-build-standalone / Astral",
+    "origem": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260924/cpython-3.12.14%2B20260924-x86_64-pc-windows-msvc-install_only.tar.gz",
+      "sha256": "c5303174bc29f5205decf6721ac549d4eb41c448f9b8c46cbc562d00348865bb",
+      "bytes": 46462396,
+      "release_api": "https://api.github.com/repos/astral-sh/python-build-standalone/releases/tags/20260924",
+      "checksum_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260924/SHA256SUMS",
+      "checksum_file_sha256": "f4c51660f65ce980a1113028ce6cb751d6251e17550bc2252bfd2be878c2cc1e"
+    }
+  },
+  "dependencias": [
+    {
+      "nome": "comtypes",
+      "versao": "1.4.8"
+    },
+    {
+      "nome": "et_xmlfile",
+      "versao": "2.0.0"
+    },
+    {
+      "nome": "MouseInfo",
+      "versao": "0.1.3"
+    },
+    {
+      "nome": "numpy",
+      "versao": "2.2.6"
+    },
+    {
+      "nome": "opencv-python",
+      "versao": "4.11.0.86"
+    },
+    {
+      "nome": "openpyxl",
+      "versao": "3.1.5"
+    },
+    {
+      "nome": "pillow",
+      "versao": "13.0.0"
+    },
+    {
+      "nome": "pip",
+      "versao": "26.2.1"
+    },
+    {
+      "nome": "PyAutoGUI",
+      "versao": "0.9.54"
+    },
+    {
+      "nome": "PyGetWindow",
+      "versao": "0.0.9"
+    },
+    {
+      "nome": "PyMsgBox",
+      "versao": "1.0.9"
+    },
+    {
+      "nome": "pyperclip",
+      "versao": "1.9.0"
+    },
+    {
+      "nome": "PyRect",
+      "versao": "0.2.0"
+    },
+    {
+      "nome": "PyScreeze",
+      "versao": "1.0.1"
+    },
+    {
+      "nome": "pytweening",
+      "versao": "1.2.0"
+    },
+    {
+      "nome": "pywin32",
+      "versao": "311"
+    },
+    {
+      "nome": "pywinauto",
+      "versao": "0.6.9"
+    },
+    {
+      "nome": "six",
+      "versao": "1.17.0"
+    }
+  ],
+  "imagens_recebidas": {
+    "aguardando.png": "979c3dffd2c7b2953bd535281cabfa15e405dd803dafb5501327cea08e614835",
+    "caixa_desmarcada.png": "eeb090de1c666a60453d104b2c1f8ff3013acf001588df6cbe25ffa905c375fc",
+    "caixa_marcada.png": "2df91776ae06145724d79519bc174a3420fa268c5dc53d928ec36e20c86a7385",
+    "codigo.png": "8b2cdb3395c6fb43a373ae7dd30d40dce584403c9a9b190c4798b49eb94549f4",
+    "digitalizacao.png": "aa409c0bbd2f6182ee710ee1c57462cade8ff93e2349e06f7485d7a06dccd47d",
+    "fluxo.png": "c8b2a9b09cd97d4cf874a8f342d875cbfdd5497b8a259744c996ef371eaa97d0",
+    "importar.png": "c61b7763dada2a9e5ecc22f0658844b73eb3b04fff0db438126bf0c177673869",
+    "liberar.png": "1a479e88c06d191c6f66096cb84d958e4d7b3d711aa067d41624a9ee1239d5a4",
+    "limpar.png": "5f67dd168e50e28e310d728c5e53ef06c54a03396399b86cd65647dea2e14539",
+    "pendencias.png": "4cccea2db6b63ce6f5ab1bc47a394705216c958e794f13354a4e4e802720e769",
+    "processo.png": "2677b798aa7a661a3338658cd4b319206900b3831afcafd417c2308b7fc702e9",
+    "processo_rotulo.png": "5bba37edc0032d2275212c81609fdbc9a65a3ee1fd256a9df368976af68da83f",
+    "salvar.png": "9ea8a4fcd9339b802011438d80169b1ce325ba3b47a3a6e722e90f8e90707e66",
+    "sigilo_cadeado.png": "725fde4108be2d1c50389d041146d47403e63bd34aaa7fabe759189fedec16c5",
+    "sigilo_decisao.png": "05ac2fcbd7393dafb967f873d841a8724cffcf6e04bad66b406eae4ad8a0f9fd",
+    "sigilo_decisao_azul.png": "c9aca77279ac2a253373731beb259053ea64c8b3c2ada3d2b6b176ff41901576",
+    "sigilo_decisao_selecionada.png": "446ec168de13191521b51fc7a44c3d1deb26233c04566bcca1eec53fbd4851e1",
+    "sigilo_decisao_texto.png": "71efd5848f060a3628705b835f309e83413427eb69bd2b60847bd6a3f0585f61",
+    "sigilo_expandir.png": "d34d0ec7b8c2f6548c8fac415ef91073ed30d7633be06feb7166dc762d11755d",
+    "sigilo_expandir_cadeado.png": "3ee081a9efa2caa4e621e47db33853057e1ab6c1e372d382cbc17d7acb9b4dbc",
+    "sigilo_grupo.png": "dda718b16aa32729e04521e198cb9fcca4d4fd410233716b99a4b0f709ae8572",
+    "sigilo_lista.png": "c23f3b93845874b92a1c21c3f6a3f0c165993905234bfe157ba515ab5727c575",
+    "sigilo_mais.png": "230e736bcc6cfe281f6781a7cfc27b8dc8c6db878989eb0c3b07776cc1d8065d",
+    "sigilo_remover.png": "c043c47ca52d77132817f794a1463a4260463b723038e1bbea2978fca2dcb334",
+    "sigilo_seta.png": "0f43e943aa10c8821470c31bdd9bdd563f1fdeaa348a0d1db764bbb2f29e2377"
+  },
+  "imagens_obrigatorias": [
+    "fluxo.png",
+    "digitalizacao.png",
+    "processo_rotulo.png",
+    "pendencias.png",
+    "importar.png",
+    "codigo.png",
+    "aguardando.png",
+    "salvar.png",
+    "caixa_desmarcada.png",
+    "caixa_marcada.png",
+    "liberar.png",
+    "limpar.png",
+    "sigilo_lista.png",
+    "sigilo_grupo.png",
+    "sigilo_decisao_texto.png",
+    "sigilo_decisao_azul.png",
+    "sigilo_cadeado.png",
+    "sigilo_remover.png"
+  ],
+  "sha256_zip_calibracoes_recebido": "e2a584cdc4e352020ed5c51b363aaadab9622d93274dbeedc5cd8e2692350830",
+  "dll_privada_msvc": {
+    "arquivo": "python/msvcp140.dll",
+    "origem": "Cópia byte a byte de numpy.libs/msvcp140-263139962577ecda4cd9469ca360a746.dll da wheel NumPy 2.2.6 Windows x64",
+    "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+  },
+  "escopo_validacao": "Teste dos executáveis Windows sob Wine/Linux; não equivale a Windows nativo ou execução no SAJ.",
+  "validacao_windows_nativo": false,
+  "versao_python_maquina_original_usuario": "Não informada; CPython 3.12.14 foi a versão dos testes neste ambiente.",
+  "planilhas_pdfs_ou_historico_incluidos": false
+}
