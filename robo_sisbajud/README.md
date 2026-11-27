@@ -12,7 +12,7 @@ Baixe a distribuição pronta na [Release Sisbajud v1.0.0 portátil](https://git
 4. Selecione a planilha `.xlsx` e a pasta dos PDFs. Confira as linhas antes de iniciar.
 5. Deixe o SAJ aberto na tela inicial e mantenha a opção correspondente marcada.
 
-**A revisão 5 altera o código. O ZIP preparado anteriormente é da revisão 4 e ainda contém a etapa antiga após Alt+L; para usar esta correção nele, substitua o arquivo `saj_previa.py` pelo código atual. O envio do ZIP como asset continua bloqueado por autenticação da conexão.**
+**A revisão 6 altera o código. O ZIP preparado anteriormente é da revisão 4 e ainda contém a etapa antiga após Alt+L; para usar esta correção nele, substitua o arquivo `saj_previa.py` pelo código atual. O envio do ZIP como asset continua bloqueado por autenticação da conexão.**
 
 O ZIP contém CPython 3.12.14 Windows x64, Tcl/Tk, bibliotecas e as 25 imagens de calibração recebidas. Não é necessário instalar Python, executar pip ou baixar componentes na primeira abertura. Mova sempre a pasta inteira. Não execute de dentro do ZIP.
 
@@ -32,7 +32,9 @@ O histórico é criado localmente em `historico_saj.csv`; tentativas anteriores 
 
 ## Fluxo atual
 
-A fonte atual é a **versão 1, revisão 5**. Preserva o fluxo já construído: abrir o digitalizador, carregar processo, fechar pendências quando houver, importar o PDF, tratar o sigilo da Decisão, salvar/liberar e limpar para o próximo processo.
+As pausas padrão são de **1,5 segundo**, substituindo os 3 segundos anteriores. Os demais tempos específicos permanecem, inclusive os 8 segundos após Alt+L e os 6 segundos nas retentativas.
+
+A fonte atual é a **versão 1, revisão 6**. Preserva o fluxo já construído: abrir o digitalizador, carregar processo, fechar pendências quando houver, importar o PDF, tratar o sigilo da Decisão, salvar/liberar e limpar para o próximo processo.
 
 Depois de `Alt+L`, o robô aguarda 8 segundos pela gravação automática do SAJ e segue diretamente para Limpar. Não procura nem clica em Salvar após Alt+L. O salvamento da peça importada, anterior à liberação, permanece. Parar continua disponível durante a espera. Consulte [VERSAO_ATUAL.json](VERSAO_ATUAL.json) e os snapshots em [versoes/](versoes/).
 
@@ -86,7 +88,7 @@ A árvore informada deve corresponder ao runtime do [manifesto da distribuição
 - `Iniciar.bat` e `iniciar_portatil.py`: abertura isolada usando o Python da distribuição.
 - `Verificar_portabilidade.bat` e `verificar_portabilidade.py`: diagnóstico local.
 - `requirements.txt`: versões fixadas das bibliotecas.
-- `versoes/`: seis snapshots legítimos da versão 1 e revisões 1–5.
+- `versoes/`: sete snapshots legítimos da versão 1 e revisões 1–6.
 - `docs/distribuicao/`: manifestação, validação e SHA256 do ZIP publicado.
 - `tests/`: regressão da gravação automática após Alt+L.
 

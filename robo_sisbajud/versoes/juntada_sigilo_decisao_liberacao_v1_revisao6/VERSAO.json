@@ -1,0 +1,14 @@
+{
+  "nome": "Juntada com remoção de Sigilo de Decisão e liberação de peças",
+  "versao": "1",
+  "revisao": 6,
+  "data": "2026-11-27",
+  "arquivo": "saj_previa.py",
+  "sha256": "3acdc7b657c7b694a7ea1cb48697058c916d40ba3fafbbf3067ce84a54da912c",
+  "alteracoes": [
+    "Pausas padrão de 3 segundos reduzidas para 1,5 segundo em cliques, teclas, importação, seleção, arrastes e limpeza.",
+    "Preservados: espera de 8 segundos após Alt+L com gravação automática, 6 segundos de retentativa, 4 segundos antes de Alt+L, 5 segundos iniciais e demais tempos específicos.",
+    "Fluxo, interface, calibrações e tratamento de erros preservados."
+  ],
+  "verificacao": "Sintaxe e comparação da fonte aprovadas: a única alteração funcional é INTERVALO=3 para INTERVALO=1.5. Valores padrão de aguardar/clicar/clicar_quando_disponivel confirmados em 1.5; nenhum aguardar(3) fixo restante. Testes simulados de gravação automática e lote aprovados; sem teste real desta revisão no SAJ."
+}

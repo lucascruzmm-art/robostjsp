@@ -27,7 +27,7 @@ class Fake(app.Motor):
             hotkey=lambda *keys: self.acoes.append(('hotkey', keys)),
             write=lambda *a, **kw: self.acoes.append(('digitar', a[0])))
 
-    def aguardar(self, segundos=3):
+    def aguardar(self, segundos=app.INTERVALO):
         self.verificar()
         self.acoes.append(('aguardar', segundos))
         if self.parar_apos_alt and segundos == 8:
