@@ -1,0 +1,19 @@
+{
+  "nome": "Robô Sisbajud TJSP — BETA modular",
+  "versao": "1-beta-modular",
+  "base_estavel": "Versão 1, revisão 6",
+  "arquivo": "saj_beta.py",
+  "sha256": "b8072f1910fa4bd514ea69f2691be20692a9a0c80ce834ea199b7ec8865a78e4",
+  "acoes": [
+    "Juntar PDF",
+    "Retirar sigilo da Decisão",
+    "Liberar peças"
+  ],
+  "combinacoes": 7,
+  "intervalo_padrao_segundos": 1.5,
+  "apos_alt_l_segundos": 8,
+  "historico_beta": "historico_saj_beta.csv",
+  "historico_anterior_somente_leitura": "historico_saj.csv",
+  "validacao": "52 testes de orquestração, planilha e interface; 4 testes de GUI com CPython Windows x64 sob Wine. Nenhuma execução real no SAJ.",
+  "imagens": "25 PNGs recebidos preservados; validação conforme ações selecionadas."
+}
